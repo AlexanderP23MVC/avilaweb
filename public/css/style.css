@@ -1,0 +1,83 @@
+:root{
+
+    --verde:#339933;
+    --verde-oscuro:#5c8a8a;
+    --verde-gris:#e0ebeb;
+    --azul-oscuro:#004d4d;
+}
+
+
+.body__principal{
+    background-image: url("../img/monnt.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    image-rendering:crisp-edges;
+}
+
+.body__secundaria{
+    /* background-image:url("../img/nocturno.jpg"); */
+    background-repeat: no-repeat;
+    background-size:cover;
+    image-rendering:crisp-edges;
+}
+
+.prueba{
+    color: #339933;
+}
+
+
+#containerDashboard{
+    display: grid;
+
+}
+
+
+/* estilo para las personas en el dashboard*/
+
+.section_personas{
+    width: 50%;
+    background-color: #004d4d;
+}
+
+
+/*    estilo para la plantilla de Rutas*/
+
+
+
+#section_tabla{
+    width: 50%;
+    
+}
+
+.container_rutas{
+    background-color: var(--verde-oscuro);
+    width: 100%;
+    height: auto;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    row-gap: 5%;
+    column-gap:5%;
+  
+}
+
+.card{
+    width:51%;
+}
+
+/* estilo para la plantilla de RegisUser*/
+
+#container_regisUser{
+    display: flexbox;
+    flex-direction: row;
+    padding: 0 0 0 30%;
+}
+
+.form_regisUser{
+    width: 100%;
+    
+}
+
+
+
