@@ -30,13 +30,19 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->add('/Dashboard','Dashboard::index');
-$routes->add('/RegistrarUsuario','Dashboard::inicioRegUser');
-$routes->post('/EnviarUsuario','Dashboard::enviarUsuario');
-$routes->add('/RutaAvila','Dashboard::regisRoutes');
-$routes->post('/EnviarRuta','Dashboard::enviarRuta');
-$routes->get('/InfoAvila','Dashboard::infoAvila');
-$routes->get('/InfoRuta','Dashboard::infoRuta');
+
+
+    $routes->add('Dashboard','Dashboard::index');
+    $routes->add('/RegistrarUsuario','Dashboard::inicioRegUser');
+    $routes->post('/EnviarUsuario','Dashboard::enviarUsuario');
+    $routes->add('/RutaAvila','Dashboard::regisRoutes');
+    $routes->post('/EnviarRuta','Dashboard::enviarRuta');
+    $routes->get('/InfoAvila','Dashboard::infoAvila');
+    $routes->get('/InfoRuta','Dashboard::infoRuta');
+    $routes->post('/login','Dashboard::login');
+    $routes->get('/otro','Dashboard::otroIndex');
+
+
 
 
 /*

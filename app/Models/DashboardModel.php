@@ -82,4 +82,15 @@ public function agregaFecha($fecha){
     // falta retornar al formulario
 
 } 
+
+
+/************************************login **********************/
+
+public function sessionLogin($datos){
+    $Usuario = $this->db->table('personas');
+    $Usuario->where($datos);
+    return $Usuario->get()->getResultArray();
+
+}
+
 }

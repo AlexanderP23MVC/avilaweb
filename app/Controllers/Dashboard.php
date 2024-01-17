@@ -13,8 +13,21 @@ class Dashboard extends BaseController
        // print_r($data);
         $datos = ["usuarios" => $data];
            
-        echo view('layout/header');
+        echo view('layout/headerNew');
         echo view('Dashboard/welcome',$datos);
+        echo view('layout/footerNew');
+        
+        
+    }
+
+
+    public function otroIndex()
+    {
+    
+        
+
+        echo view('layout/header');
+        echo view('Dashboard/index');
         echo view('layout/footer');
         
         
@@ -91,6 +104,24 @@ class Dashboard extends BaseController
         
     }
 
+    public function login(){
+        $encrypter = \Config\Services::encrypter();
+        
+        $usuario = $this->request->getPost('usuario');
+        $password = $this->request->getPost('password');
+        
+        $veryPassw =  password_hash($password,PASSWORD_DEFAULT); 
+               
+        $Usuarios = new DashboardModel();
+        $datoUsuario = $Usuarios->sessionLogin(['correo'=> $usuario]);
+        
+        if(count($datoUsuario)>0 && password_verify($password,$datoUsuario[0]['password']))
+        {
+            return redirect()->to(base_url('/Dashboard'))->with('mensaje','1');
+        }else{
+            return redirect()->to(base_url('/'))->with('mensaje','1');
+        }
+    }
 
 
 
