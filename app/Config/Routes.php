@@ -29,18 +29,28 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
+
+$routes->post('/login','Dashboard::login');
 $routes->get('/', 'Home::index');
 
+$routes->group('/',['namespace'=>'App\Controllers', 'filter' => 'auth'],function($routes){
 
-    $routes->add('Dashboard','Dashboard::index');
+    
+    $routes->get('Dashboard','Dashboard::index');
     $routes->add('/RegistrarUsuario','Dashboard::inicioRegUser');
     $routes->post('/EnviarUsuario','Dashboard::enviarUsuario');
     $routes->add('/RutaAvila','Dashboard::regisRoutes');
     $routes->post('/EnviarRuta','Dashboard::enviarRuta');
     $routes->get('/InfoAvila','Dashboard::infoAvila');
     $routes->get('/InfoRuta','Dashboard::infoRuta');
-    $routes->post('/login','Dashboard::login');
     $routes->get('/otro','Dashboard::otroIndex');
+    $routes->get('/logout','Dashboard::logout');
+
+});
+   
+    $routes->group('admin',['namespace'=> 'App\Controllers\Login'], function ($routes) {
+        $routes->get('Adminlogin','Login::index');
+    });
 
 
 

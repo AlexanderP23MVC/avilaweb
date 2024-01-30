@@ -105,22 +105,37 @@ class Dashboard extends BaseController
     }
 
     public function login(){
-        $encrypter = \Config\Services::encrypter();
+        
         
         $usuario = $this->request->getPost('usuario');
         $password = $this->request->getPost('password');
-        
-        $veryPassw =  password_hash($password,PASSWORD_DEFAULT); 
+      
                
         $Usuarios = new DashboardModel();
         $datoUsuario = $Usuarios->sessionLogin(['correo'=> $usuario]);
-        
-        if(count($datoUsuario)>0 && password_verify($password,$datoUsuario[0]['password']))
+    
+        if($datoUsuario[0]['correo'] == $usuario && password_verify($password,$datoUsuario[0]['password']))
         {
+            $data = [
+                        "id" => $datoUsuario[0]['id'],
+                        "usuario" => $datoUsuario[0]['nombre'],
+                        "loggin" => true
+                     ];
+            $session = session();
+            $session->set($data);
+
+         
+                     
             return redirect()->to(base_url('/Dashboard'))->with('mensaje','1');
         }else{
             return redirect()->to(base_url('/'))->with('mensaje','1');
         }
+    }
+
+    public function logout(){
+        $session = session();
+        $session->destroy();
+        return redirect()->to(base_url('/'))->with('mensaje','1');
     }
 
 
