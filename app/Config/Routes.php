@@ -32,12 +32,15 @@ $routes->set404Override();
 
 $routes->post('/login','Dashboard::login');
 $routes->get('/', 'Home::index');
+$routes->add('/RegistrarUsuario','Login\Login::inicioRegUser');
+$routes->post('/EnviarUsuario','Dashboard::enviarUsuario');
+$routes->get('/ObtenerUsuario','Login\Login::obtenerUsuario');
 
 $routes->group('/',['namespace'=>'App\Controllers', 'filter' => 'auth'],function($routes){
 
     
     $routes->get('Dashboard','Dashboard::index');
-    $routes->add('/RegistrarUsuario','Dashboard::inicioRegUser');
+    //$routes->add('/RegistrarUsuario','Dashboard::inicioRegUser');
     $routes->post('/EnviarUsuario','Dashboard::enviarUsuario');
     $routes->add('/RutaAvila','Dashboard::regisRoutes');
     $routes->post('/EnviarRuta','Dashboard::enviarRuta');

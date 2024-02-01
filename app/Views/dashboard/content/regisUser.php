@@ -1,100 +1,123 @@
-<div id="container_regisUser">
-  <div class="form_regisUser">
-    <h1>Registrar Usuario</h1>
-    <form class="formulario_Usuario" name="formulario_Usuario" method="POST"
-      action="<?php echo base_url()?>EnviarUsuario">
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="inputEmail4">Nombre</label>
-          <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
-        </div>
-        <div class="form-group col-md-6">
-          <label for="inputPassword4">Apellido</label>
-          <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido">
-        </div>
-        <div class="form-group col-md-6">
-          <label for="inputPassword4">Cedula</label>
-          <input type="text" class="form-control" id="cedula" name="cedula" placeholder="Cedula">
-        </div>
+<div class="container-scroller">
+  <div class="container-fluid page-body-wrapper full-page-wrapper">
+    <div class="row w-100 m-0">
+      <div class="content-wrapper full-page-wrapper d-flex align-items-center auth login-bg">
+        <div class="col-12 grid-margin">
+          <div class="card">
+            <div class="card-body">
+         
 
-        <div class="form-group col-md-6">
-          <label for="inputPassword4">Telefono</label>
-          <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Telefono">
-        </div>
-        <div class="form-group col-md-6">
-          <label for="inputPassword4">Correo</label>
-          <input type="text" class="form-control" id="correo" name="correo" placeholder="Correo">
-        </div>
+             
+              
+              <h4 class="card-title">Horizontal Two column</h4>
+              <?php  echo validation_list_errors(); ?>
+              <form class="form-sample" action="<?php echo base_url()?>ObtenerUsuario" method="GET" autocomplete="off">
+                <p class="card-description"> Personal info </p>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Nombre</label>
+                      <div class="col-sm-9">
+                        <input type="text" name="nombre"  class="form-control">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Apellido</label>
+                      <div class="col-sm-9">
+                        <input type="text" name="apellido" class="form-control">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Cedula</label>
+                      <div class="col-sm-9">
+                        <input type="text" name="cedula" class="form-control">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Telefono</label>
+                      <div class="col-sm-9">
+                        <input type="text" name="telefono" class="form-control">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Edad</label>
+                      <div class="col-sm-9">
+                        <input type="text" name="edad" class="form-control">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Correo</label>
+                      <div class="col-sm-9">
+                        <input type="email" name="correo" class="form-control">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Sexo</label>
+                      <div class="col-sm-9">
+                        <select name="sexo" class="form-control">
+                          <option>Masculino</option>
+                          <option>Femenino</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
 
-        <div class="form-group col-md-6">
-          <label for="inputPassword4">Edad</label>
-          <input type="text" class="form-control" id="edad" name="edad" placeholder="Edad">
+                  <div class="col-md-6">
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Direccion</label>
+                      <div class="col-sm-9">
+                        <input type="text" name="direccion" class="form-control">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Contraseña</label>
+                      <div class="col-sm-9">
+                        <input type="password" name="password" class="form-control">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Confirmar Contraseña</label>
+                      <div class="col-sm-9">
+                        <input type="password" name="configPassword" class="form-control">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <button type="submit"  class="btn btn-primary btn-block enter-btn" style="width: 100px;">Login</button>
+                </div>
+              </div>
+              </form>
+              
+            
+          </div>
+          
         </div>
-        <div class="form-group col-md-6">
-          <label for="inputPassword4">Sexo</label>
-          <input type="text" class="form-control" id="sexo" name="sexo" placeholder="Sexo">
-        </div>
-
+       
       </div>
-      <div class="card text-center">
-        <div class="card-header">
-          <ul class="nav nav-tabs card-header-tabs">
-            <li class="nav-item">
-              <a class="nav-link active"><input type="radio" name="tipoUsuario" id="tipoUsuario" value="1">
-                Campista</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link"><input type="radio" name="tipoUsuario" id="tipoUsuario" value="2">
-                Senderista</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link"><input type="radio" name="tipoUsuario" id="tipoUsuario" value="3"> Guia</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link"><input type="radio" name="tipoUsuario" id="tipoUsuario" value="4"> Guarda
-                Parque</a>
-            </li>
-
-          </ul>
-        </div>
-        <div class="card-body">
-          <div class="form-group col-md-6">
-            <div class="form-group col-md-4">
-              <label for="inputState">Ruta de Inicio</label>
-              <select id="rutaIni" class="form-control" name="rutaIni">
-                <option selected>Ruta Inicio</option>
-                <?php foreach($rutas as $key){?>
-                <option value="<?php echo $key->id?>"><?php echo $key->nombre_ruta?>
-                </option>
-                <?php }?>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-group col-md-6">
-            <div class="form-group col-md-4">
-              <label for="inputState">Ruta de Destino</label>
-              <select id="rutaDes" class="form-control" name="rutaDes">
-                <option selected>Ruta Destino</option>
-                <?php foreach($rutas as $key){?>
-                <option value="<?php echo $key->id?>"><?php echo $key->nombre_ruta?>
-                </option>
-                <?php }?>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-group col-md-6">
-            <label for="inputPassword4">Fecha para campistas</label>
-            <input type="date" class="form-control" id="fecha" name="fecha" placeholder="Fecha para campistas">
-          </div>
-
-        </div>
-
-      </div>
-      <button type="submit" class="btn btn-primary">Registrar</button>
-    </form>
+      <!-- content-wrapper ends -->
+    </div>
+    <!-- row ends -->
   </div>
-
-
+  <!-- page-body-wrapper ends -->
 </div>

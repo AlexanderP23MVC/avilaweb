@@ -34,40 +34,14 @@ class Dashboard extends BaseController
     }
 
     public function inicioRegUser(){
-        $mostrar = new DashboardModel();
-        $data = $mostrar->mostrarRutas();
-        $datos= ["rutas"=>$data];
-
-        echo view('layout/header');
-        echo view('Dashboard/content/regisUser',$datos);
-        echo view('layout/footer');
+        
+       
+        echo view('layout/headerLogin');
+        echo view('Dashboard/content/regisUser');
+        echo view('layout/footerLogin');
 
     }
       
-    public function enviarUsuario(){
-
-        $datosUsuarios = [
-           "nombre" => $_POST["nombre"],
-           "apellido" => $_POST["apellido"],
-           "cedula" => $_POST["cedula"],
-           "telefono" => $_POST["telefono"],
-           "correo" => $_POST["correo"],
-           "edad" => $_POST["edad"],
-           "sexo" => $_POST["sexo"],
-           "estado" =>"1",
-           "id_tipo_usuario" => $_POST["tipoUsuario"],
-           "id_rutaInicio"=>$_POST["rutaIni"],
-           "id_rutaDestino"=>$_POST["rutaDes"],
-           "id_reporte"=>"1"
-           
-       ];
-       $agregar = new DashboardModel();
-       $agregar->agregarUsuarios($datosUsuarios);
-       
-       
-      
-   }
-
 
     public function regisRoutes(){
         echo view('layout/header');
